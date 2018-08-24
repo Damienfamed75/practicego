@@ -1,16 +1,25 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/Damienfamed75/practicego/02/something"
+)
 
 func main() {
-	av := average(20, 10, 40, 46, 94, 42)
-	fmt.Println(av)
+	added := add(1, 2, 4, 5, 5, 12)
+
+	something.SayMyName()
+	something.SayStupid()
+
+	fmt.Println(added)
 }
 
-func average(sf ...float64) float64 {
-	var total float64
+func add(sf ...int) int {
+	total := 0
 	for _, num := range sf {
-		total += num
+
+		total = total + num
 	}
-	return total / float64(len(sf))
+	return total
 }
