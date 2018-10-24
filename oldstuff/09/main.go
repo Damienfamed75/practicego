@@ -1,30 +1,19 @@
 package main
 
 import (
-	"github.com/damienfamed75/practicego/09/objects"
-	"github.com/damienfamed75/practicego/09/types"
-)
-
-var (
-	u types.Updater
+	"github.com/Damienfamed75/practicego/09/examiner"
 )
 
 func main() {
-	personOne := objects.NewObjectOne("Damien", "Stamates")
-	personTwo := objects.NewObjectTwo("Nathan", "Daniel", "Melsheimer")
+	e := examiner.NewExaminer()
 
-	updaters := []types.Updater{personOne, personTwo}
-
-	update(updaters)
-
-	personOne.FName = "Someone"
-	personOne.LName = "else"
-
-	update(updaters)
-}
-
-func update(updaters []types.Updater) {
-	for _, u := range updaters {
-		u.Update()
+	if !e.HasExamined() {
+		e.ExamineAndTell("red", false)
 	}
+
+	e.ExamineAndTell("yellow", true)
+
+	e.ExamineAndTell("green", false)
+
+	e.ExamineAndTell("orange", true)
 }

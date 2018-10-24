@@ -7,7 +7,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	defer src.Close()
 
 	dst, err := os.Create("dst.txt")
 	if err != nil {
@@ -18,4 +17,8 @@ func main() {
 	bs := make([]byte, 9)
 	src.Read(bs)
 	dst.Write(bs)
+
+	src.Close()
+
+	os.Remove("text.txt")
 }

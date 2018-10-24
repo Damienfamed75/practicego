@@ -10,12 +10,14 @@ func main() {
 	i := 0
 	for {
 		i++
-		if i%2 == 0 {
+		if i%2 != 0 {
 			continue
+
 		}
-		fmt.Printf("%v\n", i)
-		if i >= 50 {
+		fmt.Println(i)
+		if i > 50 {
 			break
+
 		}
 	}
 }
