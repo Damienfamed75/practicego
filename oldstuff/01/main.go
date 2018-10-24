@@ -1,8 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"go/build"
+)
 
 func main() {
+	fmt.Println(build.Default.GOOS)
 	i := 0
 	for {
 		i++
